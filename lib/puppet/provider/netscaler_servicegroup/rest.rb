@@ -51,6 +51,7 @@ Puppet::Type.type(:netscaler_servicegroup).provide(:rest, {:parent => Puppet::Pr
         :tcp_profile         => service['tcpprofilename'],
         :http_profile        => service['httpprofilename'],
         :net_profile         => service['netprofile'],
+        :http_compression    => service['cmp']
         ## Unknown create, set, & unset attributes
         #service['cmp']
         #service['pathmonitor']
@@ -82,6 +83,7 @@ Puppet::Type.type(:netscaler_servicegroup).provide(:rest, {:parent => Puppet::Pr
       :comments            => :comment,
       :graceful_shutdown   => :graceful,
       :health_monitoring   => :healthmonitor,
+      :http_compression    => :cmp,
       :max_clients         => :maxclient,
       :max_requests        => :maxreq,
       :maximum_bandwidth   => :maxbandwidth,
@@ -92,7 +94,7 @@ Puppet::Type.type(:netscaler_servicegroup).provide(:rest, {:parent => Puppet::Pr
       :surge_protection    => :sp,
       :tcp_buffering       => :tcpb,
       :traffic_domain_id   => :td,
-      :use_source_ip       => :usip,
+      :use_client_ip       => :usip,
       :tcp_profile         => :tcpprofilename,
       :http_profile        => :httpprofilename,
       :autoscale_mode      => :autoscale,
