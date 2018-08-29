@@ -20,6 +20,7 @@ Puppet::Type.type(:netscaler_servicegroup_member).provide(:rest, {:parent => Pup
           :server_id => bind['serverid'],
           :hash_id   => bind['hashid'],
           :state     => bind['state'],
+          :custom_server_id => bind['customserverid']
         })
       end
     end

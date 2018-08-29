@@ -28,6 +28,10 @@ Puppet::Type.newtype(:netscaler_servicegroup_member) do
     truthy_property('The configured state (enable/disable) of the service group.','ENABLED','DISABLED')
   end
 
+  newproperty(:custom_server_id) do
+    desc "Identifier for this IP:Port pair. Used when persistence type is set to Custom Server ID"
+  end
+
   autorequire(:netscaler_servicegroup) do
     self[:name].split('/')[0]
   end
